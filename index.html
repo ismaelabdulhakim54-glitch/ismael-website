@@ -1,173 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ismael | Full-Stack Web Developer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:#fff;
-}
-
-header{
-  padding:40px;
-  text-align:center;
-}
-
-h1{
-  font-size:2.5rem;
-  letter-spacing:2px;
-}
-
-p{
-  max-width:800px;
-  margin:auto;
-  line-height:1.6;
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  padding:40px;
-  perspective:1000px;
-}
-
-.card{
-  background:#111;
-  border-radius:20px;
-  overflow:hidden;
-  transform-style:preserve-3d;
-  transition:transform 0.6s;
-  box-shadow:0 20px 40px rgba(0,0,0,0.6);
-}
-
-.card:hover{
-  transform:rotateY(15deg) rotateX(8deg) scale(1.05);
-}
-
-.card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  cursor:pointer;
-}
-
-.card h3{
-  padding:15px;
-  text-align:center;
-}
-
-video{
-  width:100%;
-  border-radius:20px;
-  margin-top:40px;
-}
-
-.about{
-  padding:40px;
-  background:#0b1c25;
-}
-
-.contact{
-  padding:40px;
-  text-align:center;
-}
-
-.contact a{
-  color:#00ffcc;
-  text-decoration:none;
-  font-size:1.1rem;
-}
-
-/* Modal */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.9);
-  align-items:center;
-  justify-content:center;
-  z-index:999;
-}
-
-.modal img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:10px;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <title>Ismael Full Stack Website Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header>
+    <h1>Ismael Full Stack Website Developer</h1>
+    <p>Email: Ismaelabdulhakim54@gmail.com | Phone: 2519 54 53 96 19, 2519 11 46 41 68</p>
+  </header>
 
-<header>
-  <h1>Ismael — Full-Stack Web Developer</h1>
-  <p>
-    I design and build modern, fast, and visually powerful websites.
-    I focus on clean design, animations, real user experience, and strong performance.
-    If you want your business or idea to stand out online — you’re in the right place.
-  </p>
-</header>
+  <section class="gallery">
+    <div class="image-card">
+      <img src="images/pexels-kevin-ku-92347-577585.jpg" alt="Lens-focused coding" onclick="openFull(this)">
+      <h3>See clearly through the lens of coding – choose us to focus on success</h3>
+    </div>
+    <div class="image-card">
+      <img src="images/website-9049204_1280-1.jpg" alt="Increase your income" onclick="openFull(this)">
+      <h3>Boost your income by having a professional website with us</h3>
+    </div>
+    <div class="image-card">
+      <img src="images/pexels-fotios-photos-2363482.jpg" alt="Mini dev, big code" onclick="openFull(this)">
+      <h3>Even small developers can create big impact with the right tools</h3>
+    </div>
+    <div class="image-card">
+      <img src="images/pexels-fotios-photos-16129705.jpg" alt="Developer coding" onclick="openFull(this)">
+      <h3>Focused development in action – we bring your ideas to life</h3>
+    </div>
+    <div class="image-card">
+      <img src="images/pexels-negativespace-160107.jpg" alt="Code on laptop" onclick="openFull(this)">
+      <h3>Clean, precise code for high-performing websites</h3>
+    </div>
+    <div class="image-card">
+      <img src="images/pexels-thepaintedsquare-4200831.jpg" alt="Laptop Google" onclick="openFull(this)">
+      <h3>Open the world of Google and online business potential</h3>
+    </div>
+  </section>
 
-<section class="gallery">
-  <div class="card">
-    <img src="images/ss1.jpg" onclick="openImg(this.src)">
-    <h3>Modern Web Design</h3>
+  <!-- Full image modal -->
+  <div id="fullImageModal" onclick="this.style.display='none'">
+    <img id="fullImage" src="">
   </div>
 
-  <div class="card">
-    <img src="images/ss2.jpg" onclick="openImg(this.src)">
-    <h3>Business Growth Websites</h3>
-  </div>
-
-  <div class="card">
-    <img src="images/ss3.jpg" onclick="openImg(this.src)">
-    <h3>Clean & Professional Code</h3>
-  </div>
-</section>
-
-<section style="padding:40px">
-  <h2>Promo Video</h2>
-  <video controls>
-    <source src="images/video1.mp4" type="video/mp4">
-  </video>
-</section>
-
-<section class="about">
-  <h2>About Me</h2>
-  <p>
-    I am Ismael, a Full-Stack Web Developer who builds modern websites with real impact.
-    I work with frontend and backend technologies and deploy websites online.
-    My goal is to help individuals and businesses grow with strong digital presence.
-  </p>
-</section>
-
-<section class="contact">
-  <h2>Contact</h2>
-  <p>📞 +251 9 54 53 96 19</p>
-  <p>📞 +251 9 11 46 41 68</p>
-  <p>📧 <a href="mailto:Ismaelabdulhakim54@gmail.com">Ismaelabdulhakim54@gmail.com</a></p>
-</section>
-
-<div class="modal" id="modal" onclick="closeImg()">
-  <img id="modalImg">
-</div>
-
-<script>
-function openImg(src){
-  document.getElementById("modal").style.display="flex";
-  document.getElementById("modalImg").src=src;
-}
-function closeImg(){
-  document.getElementById("modal").style.display="none";
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
