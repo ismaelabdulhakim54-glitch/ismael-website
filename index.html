@@ -1,208 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ismael Full Stack Website Developer</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0f1a;
-  color: #fff;
-}
-
-/* HEADER */
-header {
-  background: #0a3cff;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  margin: 0;
-  color: #fff;
-  font-size: 22px;
-}
-
-/* MENU */
-.menu {
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 60px;
-  background: #111;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.dropdown a {
-  display: block;
-  padding: 12px 20px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid #222;
-}
-
-.dropdown a:hover {
-  background: #0a3cff;
-}
-
-/* SECTION */
-section {
-  padding: 25px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-}
-
-/* IMAGE CARD */
-.card {
-  background: #111;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  transform: perspective(800px) rotateX(0deg);
-  transition: transform 0.4s;
-}
-
-.card:hover {
-  transform: perspective(800px) rotateX(4deg) scale(1.02);
-}
-
-.card img {
-  width: 100%;
-  cursor: pointer;
-}
-
-.card h3 {
-  margin: 15px;
-  color: #4da3ff;
-}
-
-.card p {
-  margin: 0 15px 20px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* VIDEO */
-video {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 30px;
-}
-
-/* FOOTER */
-footer {
-  padding: 25px;
-  background: #070b14;
-  text-align: center;
-  font-size: 14px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ismael | Full Stack Website Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-
 <body>
 
-<header>
-  <h1>Ismael Full Stack Website Developer</h1>
-  <div class="menu" onclick="toggleMenu()">⋮</div>
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="title">Ismael | <span>Full Stack Website Developer</span></h1>
+    <div class="menu">☰</div>
+    <nav class="menu-links">
+      <a href="#about">About</a>
+      <a href="#work">My Work</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.fiverr.com/" target="_blank">Fiverr</a>
+      <a href="https://www.upwork.com/" target="_blank">Upwork</a>
+    </nav>
+  </header>
 
-  <div class="dropdown" id="menu">
-    <a href="#about">About</a>
-    <a href="https://www.upwork.com" target="_blank">Upwork</a>
-    <a href="https://www.fiverr.com" target="_blank">Fiverr</a>
-    <a href="#contact">Contact</a>
-  </div>
-</header>
+  <!-- 3D SCENE -->
+  <div id="three-container"></div>
 
-<section class="grid">
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I'm <strong>Ismael</strong>, a passionate <b>Full Stack Web Developer</b> skilled in HTML, CSS, JavaScript, React, Node.js, MongoDB, and animations. I also create <b>3D and AI-powered websites</b>.</p>
+    <img src="images/men1.jpg" alt="Ismael Profile">
+  </section>
 
-<div class="card">
-  <img src="images/pexels-kevin-ku-92347-577585.jpg" onclick="openImg(this.src)">
-  <h3>Clear Vision Development</h3>
-  <p>I analyze your project deeply like a lens focusing on clean, secure, and scalable code.</p>
-</div>
+  <!-- WORK SECTION -->
+  <section id="work" class="section">
+    <h2>My Work</h2>
+    <div class="gallery">
+      <div><img src="images/ss1.jpg" alt="E-commerce Design"><p>E-commerce Design</p></div>
+      <div><img src="images/ss2.jpg" alt="Portfolio Website"><p>Portfolio Website</p></div>
+      <div><img src="images/ss3.jpg" alt="Business Landing Page"><p>Business Landing Page</p></div>
+      <div><img src="images/ss4.jpg" alt="Creative Agency"><p>Creative Agency</p></div>
+      <div><img src="images/ss5.jpg" alt="Luxury Store"><p>Luxury Store</p></div>
+      <div><img src="images/pexels-fotios-photos-16129705.jpg" alt="Modern Web UI"><p>Modern Web UI</p></div>
+    </div>
+    <video src="images/video1.mp4" controls autoplay loop></video>
+  </section>
 
-<div class="card">
-  <img src="images/website-9049204_1280-1.jpg" onclick="openImg(this.src)">
-  <h3>Income Growth Websites</h3>
-  <p>Websites designed to increase traffic, conversions, and your business income.</p>
-</div>
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <h2>Client Testimonials</h2>
+    <div class="testimonial-slider">
+      <p>“Ismael built my dream website perfectly. Highly recommended!” ⭐⭐⭐⭐⭐</p>
+      <p>“Professional, fast, and creative — a great full stack developer!” 🌟🌟🌟🌟🌟</p>
+    </div>
+  </section>
 
-<div class="card">
-  <img src="images/pexels-fotios-photos-2363482.jpg" onclick="openImg(this.src)">
-  <h3>Big Ideas, Powerful Code</h3>
-  <p>Turning complex ideas into powerful systems using modern technologies.</p>
-</div>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>📞 WhatsApp: <a href="https://wa.me/2519xxxxxxxx" target="_blank">Chat with me</a></p>
+    <p>💼 Fiverr: <a href="https://www.fiverr.com/" target="_blank">View Profile</a></p>
+    <p>💼 Upwork: <a href="https://www.upwork.com/" target="_blank">View Profile</a></p>
+  </section>
 
-<div class="card">
-  <img src="images/pexels-fotios-photos-16129705.jpg" onclick="openImg(this.src)">
-  <h3>Professional Coding Process</h3>
-  <p>Clean structure, performance optimization, and best development practices.</p>
-</div>
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/2519xxxxxxxx" class="whatsapp-btn" target="_blank">💬</a>
 
-<div class="card">
-  <img src="images/pexels-negativespace-160107.jpg" onclick="openImg(this.src)">
-  <h3>Backend & Frontend Mastery</h3>
-  <p>Full stack solutions from UI to server, database, and deployment.</p>
-</div>
-
-<div class="card">
-  <img src="images/pexels-thepaintedsquare-4200831.jpg" onclick="openImg(this.src)">
-  <h3>Search & Performance Focus</h3>
-  <p>SEO-friendly, fast-loading, Google-optimized websites.</p>
-</div>
-
-</section>
-
-<section id="about">
-<h2 style="color:#4da3ff;">About Me</h2>
-<p>
-I am <strong>Ismael</strong>, a Full Stack Website Developer.  
-I build modern websites, 3D animations, AI animations, business systems, and scalable platforms using real-world development experience.
-</p>
-<p>
-I help clients grow their online presence and income through high-quality design and clean code.
-</p>
-
-<video controls>
-  <source src="images/video1.mp4" type="video/mp4">
-</video>
-</section>
-
-<section id="contact">
-<h2 style="color:#4da3ff;">Contact</h2>
-<p>📧 Email: Ismaelabdulhakim54@gmail.com</p>
-<p>📱 Phone: +2519 54 53 96 19 / +2519 11 46 41 68</p>
-</section>
-
-<footer>
-© 2026 Ismael Full Stack Website Developer
-</footer>
-
-<script>
-function toggleMenu() {
-  const m = document.getElementById("menu");
-  m.style.display = m.style.display === "block" ? "none" : "block";
-}
-
-function openImg(src) {
-  window.open(src, "_blank");
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
